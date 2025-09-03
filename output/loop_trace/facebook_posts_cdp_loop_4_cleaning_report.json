@@ -1,0 +1,91 @@
+{
+  "summary": {
+    "cleanedPosts": 7,
+    "processingDate": "2025-09-03T16:05:28.327819",
+    "method": "CDP Session (Mobile) + Advanced Cleaning"
+  },
+  "topPosts": [
+    {
+      "rank": 1,
+      "confidence": "1.00",
+      "text": "Cerita hari kemarin ,pas nguping sepekar abu haji pupus terus di tlpn ...memastikan . Singkat cerita...",
+      "author": "Ai Saadah",
+      "timestamp": "2025-09-03T16:04:45.416112"
+    },
+    {
+      "rank": 2,
+      "confidence": "0.80",
+      "text": "Ayuha jua bgmatan nah mudhn kwa jua gajihan kya orang².. Intinya tetap semangat💪",
+      "author": "Silvia Ananda",
+      "timestamp": "2025-09-03T16:04:45.415028"
+    },
+    {
+      "rank": 3,
+      "confidence": "0.50",
+      "text": "Dey RQ and 3.4K others",
+      "author": "Devii",
+      "timestamp": "2025-09-03T16:04:45.414555"
+    },
+    {
+      "rank": 4,
+      "confidence": "0.40",
+      "text": "Temenin mami masak2 d rumah abang dan kasih kejuatan ulang tahun buat seli",
+      "author": "Ciska Ciska",
+      "timestamp": "2025-09-03T16:04:45.406862"
+    },
+    {
+      "rank": 5,
+      "confidence": "0.40",
+      "text": "Otw cari pemula yang belum pernah dapet NAGA🐉🐉🐉🐉🌟🤗✅",
+      "author": "Devii",
+      "timestamp": "2025-09-03T16:04:45.410488"
+    },
+    {
+      "rank": 6,
+      "confidence": "0.10",
+      "text": "Afif Yuliani and 62K others",
+      "author": "Ciska Ciska",
+      "timestamp": "2025-09-03T16:04:45.410180"
+    },
+    {
+      "rank": 7,
+      "confidence": "0.10",
+      "text": "September S is one hundred million months 🤲🏻",
+      "author": "Widiya Yanti Daily",
+      "timestamp": "2025-09-03T16:04:45.416499"
+    }
+  ],
+  "qualityDistribution": {
+    "highConfidence": 1,
+    "mediumConfidence": 2,
+    "lowConfidence": 4
+  },
+  "authorStats": {
+    "totalAuthors": 5,
+    "postsWithAuthor": 7,
+    "postsWithoutAuthor": 0,
+    "authorCoverage": "100.0%",
+    "topAuthors": [
+      {
+        "author": "Ciska Ciska",
+        "postCount": 2
+      },
+      {
+        "author": "Devii",
+        "postCount": 2
+      },
+      {
+        "author": "Silvia Ananda",
+        "postCount": 1
+      },
+      {
+        "author": "Ai Saadah",
+        "postCount": 1
+      },
+      {
+        "author": "Widiya Yanti Daily",
+        "postCount": 1
+      }
+    ]
+  }
+}

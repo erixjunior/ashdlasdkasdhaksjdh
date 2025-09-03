@@ -1,0 +1,100 @@
+{
+  "scrapedAt": "2025-09-03T16:02:59.590342",
+  "totalPosts": 3,
+  "source": "https://m.facebook.com/me",
+  "method": "CDP Session (Mobile) + Advanced Cleaning",
+  "cleaningStats": {
+    "summary": {
+      "cleanedPosts": 3,
+      "processingDate": "2025-09-03T16:02:59.590277",
+      "method": "CDP Session (Mobile) + Advanced Cleaning"
+    },
+    "topPosts": [
+      {
+        "rank": 1,
+        "confidence": "0.60",
+        "text": "Adek cantik ini nggak pernah susah makan, sama apa aja dia lahap, sama lalapan pun dia mau. 🤗",
+        "author": "Resti Holipah",
+        "timestamp": "2025-09-03T16:02:20.032957"
+      },
+      {
+        "rank": 2,
+        "confidence": "0.10",
+        "text": "Salam SKSD Semuanya",
+        "author": "Nova",
+        "timestamp": "2025-09-03T16:02:20.033283"
+      },
+      {
+        "rank": 3,
+        "confidence": "0.10",
+        "text": "Akhir nya bisa cari keringat lagi 🏐🥰",
+        "author": "Arni Wolla",
+        "timestamp": "2025-09-03T16:02:20.047326"
+      }
+    ],
+    "qualityDistribution": {
+      "highConfidence": 0,
+      "mediumConfidence": 1,
+      "lowConfidence": 2
+    },
+    "authorStats": {
+      "totalAuthors": 3,
+      "postsWithAuthor": 3,
+      "postsWithoutAuthor": 0,
+      "authorCoverage": "100.0%",
+      "topAuthors": [
+        {
+          "author": "Resti Holipah",
+          "postCount": 1
+        },
+        {
+          "author": "Nova",
+          "postCount": 1
+        },
+        {
+          "author": "Arni Wolla",
+          "postCount": 1
+        }
+      ]
+    }
+  },
+  "posts": [
+    {
+      "id": "clean_post_7",
+      "originalId": "container_post_353",
+      "text": "Adek cantik ini nggak pernah susah makan, sama apa aja dia lahap, sama lalapan pun dia mau. 🤗",
+      "author": "Resti Holipah",
+      "timestamp": "2025-09-03T16:02:20.032957",
+      "confidence": 0.6,
+      "originalIndex": 69,
+      "status": "neutral",
+      "sentiment_score": 0.0,
+      "emotion": "neutral",
+      "key_topics": [],
+      "summary": "Adek cantik ini nggak pernah susah makan, sama apa aja dia lahap, sama lalapan pun dia mau. 🤗"
+    },
+    {
+      "id": "clean_post_8",
+      "originalId": "container_post_378",
+      "text": "Salam SKSD Semuanya",
+      "author": "Nova",
+      "timestamp": "2025-09-03T16:02:20.033283",
+      "confidence": 0.1,
+      "originalIndex": 73
+    },
+    {
+      "id": "clean_post_17",
+      "originalId": "container_post_577",
+      "text": "Akhir nya bisa cari keringat lagi 🏐🥰",
+      "author": "Arni Wolla",
+      "timestamp": "2025-09-03T16:02:20.047326",
+      "confidence": 0.1,
+      "originalIndex": 115,
+      "status": "neutral",
+      "sentiment_score": 0.0,
+      "emotion": "neutral",
+      "key_topics": [],
+      "summary": "Akhir nya bisa cari keringat lagi 🏐🥰"
+    }
+  ]
+}

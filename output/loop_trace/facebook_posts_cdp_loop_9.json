@@ -1,0 +1,75 @@
+{
+  "scrapedAt": "2025-09-03T16:11:37.006265",
+  "totalPosts": 2,
+  "source": "https://m.facebook.com/me",
+  "method": "CDP Session (Mobile) + Advanced Cleaning",
+  "cleaningStats": {
+    "summary": {
+      "cleanedPosts": 2,
+      "processingDate": "2025-09-03T16:11:37.006204",
+      "method": "CDP Session (Mobile) + Advanced Cleaning"
+    },
+    "topPosts": [
+      {
+        "rank": 1,
+        "confidence": "0.10",
+        "text": "Waktu nya tolat sisa semalem",
+        "author": "Ai Saadah",
+        "timestamp": "2025-09-03T16:10:59.222774"
+      },
+      {
+        "rank": 2,
+        "confidence": "0.10",
+        "text": "di segerinn duluu",
+        "author": "Aas Holimah",
+        "timestamp": "2025-09-03T16:10:59.229738"
+      }
+    ],
+    "qualityDistribution": {
+      "highConfidence": 0,
+      "mediumConfidence": 0,
+      "lowConfidence": 2
+    },
+    "authorStats": {
+      "totalAuthors": 2,
+      "postsWithAuthor": 2,
+      "postsWithoutAuthor": 0,
+      "authorCoverage": "100.0%",
+      "topAuthors": [
+        {
+          "author": "Ai Saadah",
+          "postCount": 1
+        },
+        {
+          "author": "Aas Holimah",
+          "postCount": 1
+        }
+      ]
+    }
+  },
+  "posts": [
+    {
+      "id": "clean_post_1",
+      "originalId": "container_post_0",
+      "text": "Waktu nya tolat sisa semalem",
+      "author": "Ai Saadah",
+      "timestamp": "2025-09-03T16:10:59.222774",
+      "confidence": 0.1,
+      "originalIndex": 0,
+      "status": "neutral",
+      "sentiment_score": 0.0,
+      "emotion": "neutral",
+      "key_topics": [],
+      "summary": "Waktu nya tolat sisa semalem"
+    },
+    {
+      "id": "clean_post_6",
+      "originalId": "container_post_301",
+      "text": "di segerinn duluu",
+      "author": "Aas Holimah",
+      "timestamp": "2025-09-03T16:10:59.229738",
+      "confidence": 0.1,
+      "originalIndex": 68
+    }
+  ]
+}

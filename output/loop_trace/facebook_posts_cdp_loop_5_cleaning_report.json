@@ -1,0 +1,132 @@
+{
+  "summary": {
+    "cleanedPosts": 18,
+    "processingDate": "2025-09-03T16:06:39.537750",
+    "method": "CDP Session (Mobile) + Advanced Cleaning"
+  },
+  "topPosts": [
+    {
+      "rank": 1,
+      "confidence": "0.80",
+      "text": "Sakiyeu oge udh Alhamdulillah Nama nya juga belajar 😆 Gak app ?di Bilang jelek kebanyak",
+      "author": "Ai Saadah",
+      "timestamp": "2025-09-03T16:06:09.752029"
+    },
+    {
+      "rank": 2,
+      "confidence": "0.80",
+      "text": "Mari hadapi hari ini dengan senyuman dan keyakinan. Selamat siang!🤗",
+      "author": "Wullan Ros",
+      "timestamp": "2025-09-03T16:06:09.766037"
+    },
+    {
+      "rank": 3,
+      "confidence": "0.60",
+      "text": "Tidak Tamat SMP Bantu Ayah Dengan jadi OJOL Sejak lama Affan Kurniawan bercita-cita ingin belikan Ru...",
+      "author": "Putri Aziz",
+      "timestamp": "2025-09-03T16:06:09.779749"
+    },
+    {
+      "rank": 4,
+      "confidence": "0.40",
+      "text": "Arbani Yasiz bersama Raissa Ramadhani menikmati honeymoon di Dubai 🖤",
+      "author": "Fansleslar",
+      "timestamp": "2025-09-03T16:06:09.761479"
+    },
+    {
+      "rank": 5,
+      "confidence": "0.40",
+      "text": "perubahan dulu sampai sekarang ko bisa keren banget😲😱",
+      "author": "Bang Ibnu",
+      "timestamp": "2025-09-03T16:06:09.779065"
+    },
+    {
+      "rank": 6,
+      "confidence": "0.10",
+      "text": "Mawul ada galau 🙈😁😂",
+      "author": "Wulan Muda",
+      "timestamp": "2025-09-03T16:06:09.755665"
+    },
+    {
+      "rank": 7,
+      "confidence": "0.10",
+      "text": "Selamat ipar syg, langgeng sllu dan bahagia sllu🥰🥰",
+      "author": "Charol",
+      "timestamp": "2025-09-03T16:06:09.756377"
+    },
+    {
+      "rank": 8,
+      "confidence": "0.10",
+      "text": "It's cold baby 😨",
+      "author": "Bowo Potabuga",
+      "timestamp": "2025-09-03T16:06:09.756866"
+    },
+    {
+      "rank": 9,
+      "confidence": "0.10",
+      "text": "Bowo Potabuga and 11 others",
+      "author": "Bowo Potabuga",
+      "timestamp": "2025-09-03T16:06:09.760517"
+    },
+    {
+      "rank": 10,
+      "confidence": "0.10",
+      "text": "KOCAK banget bikin KOCOK perut🤣",
+      "author": "Kadek Joged Bali",
+      "timestamp": "2025-09-03T16:06:09.760940"
+    }
+  ],
+  "qualityDistribution": {
+    "highConfidence": 0,
+    "mediumConfidence": 3,
+    "lowConfidence": 15
+  },
+  "authorStats": {
+    "totalAuthors": 14,
+    "postsWithAuthor": 18,
+    "postsWithoutAuthor": 0,
+    "authorCoverage": "100.0%",
+    "topAuthors": [
+      {
+        "author": "Bowo Potabuga",
+        "postCount": 2
+      },
+      {
+        "author": "Ai Nurhayati",
+        "postCount": 2
+      },
+      {
+        "author": "Luna Maya",
+        "postCount": 2
+      },
+      {
+        "author": "Putri Aziz",
+        "postCount": 2
+      },
+      {
+        "author": "Ai Saadah",
+        "postCount": 1
+      },
+      {
+        "author": "Wulan Muda",
+        "postCount": 1
+      },
+      {
+        "author": "Charol",
+        "postCount": 1
+      },
+      {
+        "author": "Kadek Joged Bali",
+        "postCount": 1
+      },
+      {
+        "author": "Fansleslar",
+        "postCount": 1
+      },
+      {
+        "author": "Wullan Ros",
+        "postCount": 1
+      }
+    ]
+  }
+}

@@ -1,6 +1,3 @@
-from utils import read_js_script, save_to_file, save_cleaning_report, save_to_csv
-from console import Console
-
 #!/usr/bin/env python3
 """
 CDP Facebook Scraper - Python Version
@@ -12,10 +9,14 @@ import time
 import re
 import os
 import random
+import json
 from config import Env
+from console import Console
+from AI.z_ai import Z_AI
 from datetime import datetime
 from typing import List, Dict, Any, Optional
 from playwright.sync_api import sync_playwright, Browser, Page, BrowserContext
+from utils import read_js_script, save_to_file, save_cleaning_report, save_to_csv
 
 
 class CDPFacebookScraper:
@@ -31,9 +32,35 @@ class CDPFacebookScraper:
         self.is_logged_in = False
         self.posts: List[Dict[str, Any]] = []
         self.cleaned_posts: List[Dict[str, Any]] = []
+        self.all_scraped_posts: List[Dict[str, Any]] = (
+            []
+        )  # Global storage for all iterations
+        self.scraped_post_hashes: set = set()  # To track duplicates across iterations
+        self.loop_count = 0
+
+        # Initialize AI analyzer
+        try:
+            self.ai = Z_AI()
+            self.prompt = self._load_prompt()
+            Console.success("✅ AI analyzer initialized")
+        except Exception as e:
+            Console.warning(f"⚠️ AI analyzer failed to initialize: {e}")
+            self.ai = None
+            self.prompt = ""
 
         # Initialize cleaning patterns
         self._init_cleaning_patterns()
+
+    def _load_prompt(self) -> str:
+        """Load sentiment analysis prompt from prompt.txt"""
+        try:
+            with open("prompt.txt", "r", encoding="utf-8") as f:
+                prompt = f.read().strip()
+                Console.debug(f"🤖 Prompt loaded: {len(prompt)} characters")
+                return prompt
+        except Exception as e:
+            Console.warning(f"⚠️ Failed to load prompt.txt: {e}")
+            return "Analyze the sentiment of this text and return JSON with status, sentiment_score, emotion, and key_topics fields only."
 
     def _init_cleaning_patterns(self):
         """Initialize patterns for filtering noise/UI elements"""
@@ -510,12 +537,73 @@ class CDPFacebookScraper:
         except Exception:
             return False
 
-    def scrape_status(self, target_url: Optional[str] = None) -> List[Dict[str, Any]]:
-        """Scrape status posts from Facebook feed"""
+    def scrape_status(
+        self,
+        target_url: Optional[str] = None,
+        continuous: bool = False,
+        loop_interval: int = 300,
+    ) -> List[Dict[str, Any]]:
+        """Scrape status posts from Facebook feed with optional continuous mode"""
         if not self.is_logged_in:
             Console.error("❌ Harus login terlebih dahulu")
             return []
 
+        if continuous:
+            return self._scrape_status_continuous(target_url, loop_interval)
+        else:
+            return self._scrape_status_single(target_url)
+
+    def _scrape_status_continuous(
+        self, target_url: Optional[str] = None, loop_interval: int = 300
+    ) -> List[Dict[str, Any]]:
+        """Continuous scraping with forever loop and deduplication"""
+        Console.log("🔄 Starting continuous scraping mode...")
+
+        while True:
+            try:
+                self.loop_count += 1
+                Console.log(f"🔄 Loop iteration #{self.loop_count}")
+
+                # Perform single scrape
+                new_posts = self._scrape_status_single(target_url)
+
+                if new_posts:
+                    # Filter out duplicates and add to global storage
+                    unique_new_posts = self._filter_duplicate_posts(new_posts)
+
+                    if unique_new_posts:
+                        self.all_scraped_posts.extend(unique_new_posts)
+                        Console.success(
+                            f"✅ Added {len(unique_new_posts)} new unique posts. Total: {len(self.all_scraped_posts)} posts"
+                        )
+
+                        # Save with append mode
+                        self._save_posts_append(unique_new_posts)
+                    else:
+                        Console.info("ℹ️ No new unique posts found in this iteration")
+                else:
+                    Console.warning("⚠️ No posts scraped in this iteration")
+
+                # Wait before next iteration
+                Console.log(
+                    f"⏳ Waiting {loop_interval} seconds before next iteration..."
+                )
+                time.sleep(loop_interval)
+
+            except KeyboardInterrupt:
+                Console.log("⏹️ Continuous scraping stopped by user")
+                break
+            except Exception as error:
+                Console.error(f"❌ Error in continuous scraping: {error}")
+                Console.log(f"⏳ Waiting {loop_interval} seconds before retry...")
+                time.sleep(loop_interval)
+
+        return self.all_scraped_posts
+
+    def _scrape_status_single(
+        self, target_url: Optional[str] = None
+    ) -> List[Dict[str, Any]]:
+        """Scrape status posts from Facebook feed - single iteration"""
         try:
             url = target_url or "https://m.facebook.com/"
             Console.debug(f"📱 Membuka halaman: {url}")
@@ -545,6 +633,7 @@ class CDPFacebookScraper:
 
             # Scroll to load more posts
             self._auto_scroll()
+            Console.log("🔄 Scrolling to load more posts...")
 
             # Scrape status posts with advanced cleaning
             posts = self._extract_posts_with_advanced_cleaning()
@@ -558,6 +647,90 @@ class CDPFacebookScraper:
             Console.error(f"❌ Error saat scraping status: {error}")
             return []
 
+    def _filter_duplicate_posts(
+        self, new_posts: List[Dict[str, Any]]
+    ) -> List[Dict[str, Any]]:
+        """Filter out duplicate posts based on content hash"""
+        unique_posts = []
+
+        for post in new_posts:
+            # Create hash from text + author for deduplication
+            content_hash = self._create_post_hash(post)
+
+            if content_hash not in self.scraped_post_hashes:
+                self.scraped_post_hashes.add(content_hash)
+                unique_posts.append(post)
+                Console.debug(f"✅ New unique post: \"{post.get('text', '')[:50]}...\"")
+            else:
+                Console.debug(
+                    f"⏭️ Duplicate post filtered: \"{post.get('text', '')[:50]}...\""
+                )
+
+        return unique_posts
+
+    def _create_post_hash(self, post: Dict[str, Any]) -> str:
+        """Create a unique hash for post deduplication"""
+        import hashlib
+
+        # Use text + author + timestamp for uniqueness
+        text = post.get("text", "").strip().lower()
+        author = post.get("author", "").strip().lower()
+
+        # Create hash
+        hash_string = f"{text}|{author}"
+        return hashlib.md5(hash_string.encode("utf-8")).hexdigest()
+
+    def _save_posts_append(self, posts: List[Dict[str, Any]]) -> None:
+        """Save posts with append mode to avoid overwriting previous data"""
+        try:
+            if not posts:
+                return
+
+            # Create output directories if not exists
+            os.makedirs("output", exist_ok=True)
+            os.makedirs("output/loop_trace", exist_ok=True)
+
+            filename_json = (
+                f"output/loop_trace/facebook_posts_cdp_loop_{self.loop_count}.json"
+            )
+            filename_csv = (
+                f"output/loop_trace/facebook_posts_cdp_loop_{self.loop_count}.csv"
+            )
+
+            # Save individual loop results
+            stats = self._calculate_cleaning_stats(posts)
+            source = (
+                Env.TARGET_PROFILE_URL
+                if hasattr(Env, "TARGET_PROFILE_URL")
+                else "https://m.facebook.com/me"
+            )
+
+            save_to_file(posts, stats, filename_json, source)
+            save_to_csv(posts, filename_csv)
+
+            # Also save cumulative results
+            if len(self.all_scraped_posts) > 0:
+                cumulative_filename_json = "output/facebook_posts_cdp_cumulative.json"
+                cumulative_filename_csv = "output/facebook_posts_cdp_cumulative.csv"
+
+                cumulative_stats = self._calculate_cleaning_stats(
+                    self.all_scraped_posts
+                )
+                save_to_file(
+                    self.all_scraped_posts,
+                    cumulative_stats,
+                    cumulative_filename_json,
+                    source,
+                )
+                save_to_csv(self.all_scraped_posts, cumulative_filename_csv)
+
+                Console.success(
+                    f"💾 Saved loop #{self.loop_count}: {len(posts)} posts | Cumulative: {len(self.all_scraped_posts)} posts"
+                )
+
+        except Exception as error:
+            Console.error(f"❌ Error saving posts: {error}")
+
     def _auto_scroll(self):
         """Auto-scroll to load more posts"""
         Console.debug("📜 Melakukan auto-scroll untuk memuat lebih banyak post...")
@@ -569,13 +742,8 @@ class CDPFacebookScraper:
         max_scroll_attempts = 25
 
         while loaded_posts < max_posts and scroll_attempts < max_scroll_attempts:
-            # Scroll with smooth scroll and random distance
-            scroll_distance = random.randint(600, 1000)
-            scroll_script = read_js_script("scroll_by.js")
-            scroll_script = scroll_script.replace(
-                "SCROLL_DISTANCE", str(scroll_distance)
-            )
-            self.page.evaluate(scroll_script)
+            # Scroll to bottom to load more posts
+            self.page.evaluate("window.scrollTo(0, document.body.scrollHeight)")
 
             # Wait for new content to load after scroll
             delay = random.randint(1000, 2000) + Env.SCRAPE_DELAY_MS
@@ -808,23 +976,58 @@ class CDPFacebookScraper:
                 if any(selector in clean_selector for selector in unwanted_selectors):
                     clean_selector = ""  # Don't save unwanted selectors
 
-                # Create cleaned post object
+                # Create cleaned post object with AI analysis
                 cleaned_post = {
                     "id": f"clean_post_{len(cleaned_posts) + 1}",
                     "originalId": post.get("id"),
                     "text": clean_text,
                     "author": enhanced_author,
                     "timestamp": post.get("timestamp") or datetime.now().isoformat(),
-                    "url": post.get("url", ""),
-                    "selector": clean_selector,
                     "confidence": self._calculate_confidence(clean_text),
                     "originalIndex": i,
                 }
+
+                # Add AI sentiment analysis
+                Console.debug(
+                    f"🤖 AI available: {self.ai is not None}, Text length: {len(clean_text)}"
+                )
+                if self.ai and len(clean_text) > 20:
+                    try:
+                        # Store text for batch analysis later
+                        cleaned_post["needs_analysis"] = True
+                        Console.debug(
+                            f"🤖 Marked post for analysis: {clean_text[:50]}..."
+                        )
+                    except Exception as e:
+                        Console.warning(f"⚠️ Failed to mark for AI analysis: {e}")
+                        cleaned_post.update(
+                            {
+                                "status": "unknown",
+                                "sentiment_score": 0.0,
+                                "emotion": "neutral",
+                                "key_topics": [],
+                            }
+                        )
+                else:
+                    # Add default sentiment for posts not marked for analysis
+                    cleaned_post.update(
+                        {
+                            "status": "neutral",
+                            "sentiment_score": 0.0,
+                            "emotion": "neutral",
+                            "key_topics": [],
+                        }
+                    )
 
                 cleaned_posts.append(cleaned_post)
                 Console.success(
                     f'✅ Added clean post {len(cleaned_posts)}: "{clean_text[:60]}..." (Author: {enhanced_author or "N/A"}) [Confidence: {cleaned_post["confidence"]:.2f}]'
                 )
+
+            # Batch AI analysis for all posts
+            if self.ai and cleaned_posts:
+                Console.log("🤖 Starting batch AI sentiment analysis...")
+                self._batch_analyze_sentiment(cleaned_posts)
 
             self.cleaned_posts = cleaned_posts
             Console.success(
@@ -851,6 +1054,247 @@ class CDPFacebookScraper:
         except Exception as error:
             Console.error(f"❌ Error extracting author for post: {error}")
             return ""
+
+    def _analyze_sentiment(self, text: str) -> Dict[str, Any]:
+        """Analyze sentiment using Z_AI with prompt from prompt.txt"""
+        try:
+            full_prompt = f"{self.prompt}\n\n{text}"
+            response = self.ai.chat(full_prompt)
+
+            Console.debug(f"🤖 AI Response: {response}")
+
+            # Try to parse JSON response
+            try:
+                # Clean response if it contains markdown code blocks
+                if not isinstance(response, str):
+                    response = "".join(
+                        response
+                    )  # Convert generator to string if needed
+
+                # Extract JSON from markdown code blocks or mixed content
+                cleaned_response = response
+
+                # If response contains ```json, extract only the JSON part
+                if "```json" in response:
+                    start_idx = response.find("```json") + 7
+                    end_idx = response.find("```", start_idx)
+                    if end_idx != -1:
+                        cleaned_response = response[start_idx:end_idx].strip()
+                    else:
+                        cleaned_response = response[start_idx:].strip()
+
+                # Remove any remaining markdown artifacts
+                cleaned_response = (
+                    cleaned_response.replace("```json", "").replace("```", "").strip()
+                )
+
+                analysis = json.loads(cleaned_response)
+
+                # Validate required fields
+                required_fields = [
+                    "status",
+                    "sentiment_score",
+                    "emotion",
+                    "key_topics",
+                    "summary",
+                ]
+                for field in required_fields:
+                    if field not in analysis:
+                        analysis[field] = self._get_default_value(field)
+
+                return analysis
+
+            except json.JSONDecodeError:
+                # If JSON parsing fails, create default analysis
+                Console.debug(f"⚠️ Failed to parse AI response as JSON: {response}")
+
+                Console.warning(
+                    "⚠️ Failed to parse AI response as JSON, using fallback analysis"
+                )
+                return {
+                    "status": "neutral",
+                    "sentiment_score": 0.0,
+                    "emotion": "neutral",
+                    "key_topics": [],
+                    "ai_response": response,  # Store raw response for debugging
+                }
+
+        except Exception as e:
+            Console.error(f"❌ Error in sentiment analysis: {e}")
+            return {
+                "status": "error",
+                "sentiment_score": 0.0,
+                "emotion": "neutral",
+                "key_topics": [],
+                "summary": text[:100] + "..." if len(text) > 100 else text,
+            }
+
+    def _get_default_value(self, field: str) -> Any:
+        """Get default value for missing analysis fields"""
+        defaults = {
+            "status": "neutral",
+            "sentiment_score": 0.0,
+            "emotion": "neutral",
+            "key_topics": [],
+            "summary": "",
+        }
+        return defaults.get(field, "")
+
+    def _batch_analyze_sentiment(self, posts: List[Dict[str, Any]]) -> None:
+        """Batch analyze sentiment for all posts using chat_multi"""
+        try:
+            # Debug: Check AI status
+            Console.debug(f"🤖 AI initialized: {self.ai is not None}")
+            Console.debug(f"🤖 Prompt loaded: {len(self.prompt) > 0}")
+            Console.debug(f"🤖 Total posts received: {len(posts)}")
+
+            # Filter posts that need analysis
+            posts_to_analyze = [p for p in posts if p.get("needs_analysis", False)]
+
+            Console.debug(f"🤖 Posts that need analysis: {len(posts_to_analyze)}")
+
+            if not posts_to_analyze:
+                Console.debug("🤖 No posts need sentiment analysis")
+                return
+
+            Console.log(f"🤖 Analyzing {len(posts_to_analyze)} posts in batch...")
+
+            # Prepare batch messages for chat_multi
+            messages = [
+                {
+                    "role": "system",
+                    "content": f"{self.prompt}\n\nI will send you multiple texts to analyze. For each text, respond with ONLY the JSON analysis, separated by '---SEPARATOR---'. Do not include explanations or markdown.",
+                }
+            ]
+
+            # Add all texts as one user message
+            batch_text = ""
+            for i, post in enumerate(posts_to_analyze):
+                batch_text += f"TEXT {i+1}: {post['text']}\n---SEPARATOR---\n"
+
+            messages.append({"role": "user", "content": batch_text.strip()})
+
+            # Get batch analysis
+            response = self.ai.chat_multi(messages)
+            Console.debug(f"🤖 Batch AI Response: {response[:200]}...")
+
+            # Parse batch response
+            analyses = self._parse_batch_response(response, len(posts_to_analyze))
+
+            # Apply analyses to posts
+            for i, post in enumerate(posts_to_analyze):
+                if i < len(analyses):
+                    analysis = analyses[i]
+                    post.update(analysis)
+                    post.pop("needs_analysis", None)  # Remove the flag
+                    Console.success(
+                        f"🤖 Post {i+1} analyzed: {analysis.get('status', 'unknown')} sentiment ({analysis.get('sentiment_score', 0):.2f})"
+                    )
+                else:
+                    # Fallback for missing analysis
+                    post.update(
+                        {
+                            "status": "neutral",
+                            "sentiment_score": 0.0,
+                            "emotion": "neutral",
+                            "key_topics": [],
+                        }
+                    )
+                    post.pop("needs_analysis", None)
+
+            Console.success(
+                f"🤖 Batch sentiment analysis complete for {len(posts_to_analyze)} posts!"
+            )
+
+            # Show summary of sentiment analysis
+            sentiment_summary = {}
+            for post in posts_to_analyze:
+                status = post.get("status", "unknown")
+                sentiment_summary[status] = sentiment_summary.get(status, 0) + 1
+
+            Console.log(f"📊 Sentiment Summary: {dict(sentiment_summary)}")
+
+        except Exception as e:
+            Console.error(f"❌ Batch sentiment analysis failed: {e}")
+            # Fallback: apply default analysis to all posts
+            for post in posts:
+                if post.get("needs_analysis", False):
+                    post.update(
+                        {
+                            "status": "error",
+                            "sentiment_score": 0.0,
+                            "emotion": "neutral",
+                            "key_topics": [],
+                        }
+                    )
+                    post.pop("needs_analysis", None)
+
+    def _parse_batch_response(
+        self, response: str, expected_count: int
+    ) -> List[Dict[str, Any]]:
+        """Parse batch response into individual analyses"""
+        analyses = []
+
+        try:
+            # Split by separator
+            parts = response.split("---SEPARATOR---")
+
+            for i, part in enumerate(parts):
+                if i >= expected_count:
+                    break
+
+                part = part.strip()
+                if not part:
+                    continue
+
+                try:
+                    # Extract JSON from each part
+                    if "```json" in part:
+                        start_idx = part.find("```json") + 7
+                        end_idx = part.find("```", start_idx)
+                        if end_idx != -1:
+                            json_str = part[start_idx:end_idx].strip()
+                        else:
+                            json_str = part[start_idx:].strip()
+                    else:
+                        json_str = (
+                            part.replace("```json", "").replace("```", "").strip()
+                        )
+
+                    analysis = json.loads(json_str)
+
+                    # Validate required fields and exclude summary
+                    required_fields = [
+                        "status",
+                        "sentiment_score",
+                        "emotion",
+                        "key_topics",
+                    ]
+                    for field in required_fields:
+                        if field not in analysis:
+                            analysis[field] = self._get_default_value(field)
+
+                    # Remove summary field if exists
+                    analysis.pop("summary", None)
+
+                    analyses.append(analysis)
+
+                except (json.JSONDecodeError, Exception) as e:
+                    Console.warning(f"⚠️ Failed to parse analysis {i+1}: {e}")
+                    # Add default analysis
+                    analyses.append(
+                        {
+                            "status": "neutral",
+                            "sentiment_score": 0.0,
+                            "emotion": "neutral",
+                            "key_topics": [],
+                        }
+                    )
+
+        except Exception as e:
+            Console.error(f"❌ Failed to parse batch response: {e}")
+
+        return analyses
 
     def _calculate_cleaning_stats(
         self, cleaned_posts: List[Dict[str, Any]]
@@ -927,10 +1371,15 @@ class CDPFacebookScraper:
         }
 
     def save_posts(
-        self, posts: List[Dict[str, Any]], filename: str = "facebook_posts_cdp.json"
+        self,
+        posts: List[Dict[str, Any]],
+        filename: str = "output/facebook_posts_cdp.json",
     ):
-        """Save posts using utils helper function"""
+        """Save posts using utils helper function - single save mode"""
         try:
+            # Create output directory if not exists
+            os.makedirs("output", exist_ok=True)
+
             stats = self._calculate_cleaning_stats(posts)
             source = (
                 Env.TARGET_PROFILE_URL
@@ -938,6 +1387,7 @@ class CDPFacebookScraper:
                 else "https://m.facebook.com/me"
             )
             save_to_file(posts, stats, filename, source)
+            Console.success(f"💾 Saved {len(posts)} posts to {filename}")
         except Exception as error:
             Console.error(f"❌ Error in save_posts: {error}")
 

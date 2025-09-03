@@ -1,0 +1,132 @@
+{
+  "summary": {
+    "cleanedPosts": 21,
+    "processingDate": "2025-09-03T16:01:39.050803",
+    "method": "CDP Session (Mobile) + Advanced Cleaning"
+  },
+  "topPosts": [
+    {
+      "rank": 1,
+      "confidence": "1.00",
+      "text": "Malam itu, udara basah oleh hujan yang baru reda. Jalanan aspal masih licin, memantulkan cahaya lamp...",
+      "author": "Zuliati Zuliati",
+      "timestamp": "2025-09-03T16:01:09.503242"
+    },
+    {
+      "rank": 2,
+      "confidence": "0.80",
+      "text": "Terima kasih kepada pengikut terbaru saya! Senang Anda bergabung!",
+      "author": "Ameeza Qiandra",
+      "timestamp": "2025-09-03T16:01:09.474922"
+    },
+    {
+      "rank": 3,
+      "confidence": "0.60",
+      "text": "kita berjuang sembuh yah anak kuat ibu😇🥺😭buat bunda² di grup ini doakan anak saya cepat sembuh yah b...",
+      "author": "Tips Sehat Ibu Hamil da",
+      "timestamp": "2025-09-03T16:01:09.502494"
+    },
+    {
+      "rank": 4,
+      "confidence": "0.60",
+      "text": "Beberapa Warga Inisiatif Membantu Uya Kuya Pindah Rumah Dengan Membawakan Barang Barangnya, Sungguh ...",
+      "author": "Khaerul Umam",
+      "timestamp": "2025-09-03T16:01:09.518331"
+    },
+    {
+      "rank": 5,
+      "confidence": "0.60",
+      "text": "BREAKING: Rihanna gave birth to her third child in a f@tal birth… A$AP Rocky burst into tears over a...",
+      "author": "Panda Dreams",
+      "timestamp": "2025-09-03T16:01:09.522632"
+    },
+    {
+      "rank": 6,
+      "confidence": "0.40",
+      "text": "Kondisi saat ini rumah mewah uya kuya setelah di jarah dan di rusak masa 31/8/2025‼️",
+      "author": "Jurnalis Bkl",
+      "timestamp": "2025-09-03T16:01:09.477952"
+    },
+    {
+      "rank": 7,
+      "confidence": "0.40",
+      "text": "ga kerasa udah 6bulan ajah bumil inih 🥰sehat sehat yah butunkuh 😘",
+      "author": "Ayang Fani Ciwidey",
+      "timestamp": "2025-09-03T16:01:09.478295"
+    },
+    {
+      "rank": 8,
+      "confidence": "0.40",
+      "text": "Makannya jgn jadi tukang minta, sekali2lah tanam sendiri biar jgn kena kata dari bp tua😂😂🤣 @sorotan",
+      "author": "Rosvita",
+      "timestamp": "2025-09-03T16:01:09.478751"
+    },
+    {
+      "rank": 9,
+      "confidence": "0.40",
+      "text": "Peredator Anakonda lewat tiba tiba, 😨aku nyuci serius 😰😱",
+      "author": "Mamak Tama Hutauruk",
+      "timestamp": "2025-09-03T16:01:09.508369"
+    },
+    {
+      "rank": 10,
+      "confidence": "0.10",
+      "text": "Waduh enteng banget mulut pelakornya 🙈",
+      "author": "Topik terkini",
+      "timestamp": "2025-09-03T16:01:09.479066"
+    }
+  ],
+  "qualityDistribution": {
+    "highConfidence": 1,
+    "mediumConfidence": 4,
+    "lowConfidence": 16
+  },
+  "authorStats": {
+    "totalAuthors": 15,
+    "postsWithAuthor": 21,
+    "postsWithoutAuthor": 0,
+    "authorCoverage": "100.0%",
+    "topAuthors": [
+      {
+        "author": "Selvia Gea",
+        "postCount": 2
+      },
+      {
+        "author": "PEJUANG MONETISASI",
+        "postCount": 2
+      },
+      {
+        "author": "Zuliati Zuliati",
+        "postCount": 2
+      },
+      {
+        "author": "Mamak Tama Hutauruk",
+        "postCount": 2
+      },
+      {
+        "author": "Aqeela Calista Fans",
+        "postCount": 2
+      },
+      {
+        "author": "Khaerul Umam",
+        "postCount": 2
+      },
+      {
+        "author": "Ameeza Qiandra",
+        "postCount": 1
+      },
+      {
+        "author": "Jurnalis Bkl",
+        "postCount": 1
+      },
+      {
+        "author": "Ayang Fani Ciwidey",
+        "postCount": 1
+      },
+      {
+        "author": "Rosvita",
+        "postCount": 1
+      }
+    ]
+  }
+}

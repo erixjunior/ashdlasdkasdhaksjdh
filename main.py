@@ -3,6 +3,7 @@ import time
 import sys
 import os
 from cdp_facebook_scraper import CDPFacebookScraper
+from config import Env
 from console import Console
 import utils
 
@@ -38,7 +39,17 @@ def main():
 
         # Scrape status from home/feed
         Console.debug("🏠 Scraping status dari beranda/feed...")
-        feed_posts = scraper.scrape_status()
+        continuous = False
+        if Env.LOOP_TYPE == "continuous":
+            continuous = True
+        if Env.LOOP_TYPE == "single":
+            continuous = False
+
+        feed_posts = scraper.scrape_status(
+            target_url="https://m.facebook.com/home.php",
+            continuous=continuous,
+            loop_interval=Env.LOOP_INTERVAL
+        )
         if feed_posts:
             Console.success(
                 f"\n📋 Berhasil scrape {len(feed_posts)} status dari beranda/feed"

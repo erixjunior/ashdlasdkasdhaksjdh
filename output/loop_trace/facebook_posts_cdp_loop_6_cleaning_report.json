@@ -1,0 +1,88 @@
+{
+  "summary": {
+    "cleanedPosts": 6,
+    "processingDate": "2025-09-03T16:07:56.506100",
+    "method": "CDP Session (Mobile) + Advanced Cleaning"
+  },
+  "topPosts": [
+    {
+      "rank": 1,
+      "confidence": "0.60",
+      "text": "Raffi ahmad melayat ke rmh duka alm affan kurniawan dan memberikan santunan uang utk org tua alm, al...",
+      "author": "Asty Nirwana",
+      "timestamp": "2025-09-03T16:07:21.115706"
+    },
+    {
+      "rank": 2,
+      "confidence": "0.40",
+      "text": "Mpok Alpa masih bisa di ajak ngobrol sebelum tak sadarkan diri 🥲",
+      "author": "Nita Purnama Habibie",
+      "timestamp": "2025-09-03T16:07:21.115170"
+    },
+    {
+      "rank": 3,
+      "confidence": "0.40",
+      "text": "Kita nunggu si teteh pami nya , Anu punung Yong eskrim 😄😄",
+      "author": "Ai Saadah",
+      "timestamp": "2025-09-03T16:07:21.116615"
+    },
+    {
+      "rank": 4,
+      "confidence": "0.40",
+      "text": "Ya Allah ga pa2 duda juga , Yang penting Arhan Cius yang manis itu ga ngebosenin",
+      "author": "Teteh Karawang",
+      "timestamp": "2025-09-03T16:07:21.116967"
+    },
+    {
+      "rank": 5,
+      "confidence": "0.30",
+      "text": "Benc! J4d! Bucin ~ part 8",
+      "author": "Eko movie",
+      "timestamp": "2025-09-03T16:07:21.116293"
+    },
+    {
+      "rank": 6,
+      "confidence": "0.10",
+      "text": "Nuryani Obess and 34 oth",
+      "author": "Umasugi Gita",
+      "timestamp": "2025-09-03T16:07:21.096794"
+    }
+  ],
+  "qualityDistribution": {
+    "highConfidence": 0,
+    "mediumConfidence": 1,
+    "lowConfidence": 5
+  },
+  "authorStats": {
+    "totalAuthors": 6,
+    "postsWithAuthor": 6,
+    "postsWithoutAuthor": 0,
+    "authorCoverage": "100.0%",
+    "topAuthors": [
+      {
+        "author": "Umasugi Gita",
+        "postCount": 1
+      },
+      {
+        "author": "Nita Purnama Habibie",
+        "postCount": 1
+      },
+      {
+        "author": "Asty Nirwana",
+        "postCount": 1
+      },
+      {
+        "author": "Eko movie",
+        "postCount": 1
+      },
+      {
+        "author": "Ai Saadah",
+        "postCount": 1
+      },
+      {
+        "author": "Teteh Karawang",
+        "postCount": 1
+      }
+    ]
+  }
+}

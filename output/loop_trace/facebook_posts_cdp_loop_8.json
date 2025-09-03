@@ -1,0 +1,258 @@
+{
+  "scrapedAt": "2025-09-03T16:10:20.063514",
+  "totalPosts": 10,
+  "source": "https://m.facebook.com/me",
+  "method": "CDP Session (Mobile) + Advanced Cleaning",
+  "cleaningStats": {
+    "summary": {
+      "cleanedPosts": 10,
+      "processingDate": "2025-09-03T16:10:20.063431",
+      "method": "CDP Session (Mobile) + Advanced Cleaning"
+    },
+    "topPosts": [
+      {
+        "rank": 1,
+        "confidence": "0.60",
+        "text": "\"A million ideas mean nothing if they never bring them to life, start with one and let it flow.\" \"",
+        "author": "Umasugi Gita",
+        "timestamp": "2025-09-03T16:09:47.074039"
+      },
+      {
+        "rank": 2,
+        "confidence": "0.30",
+        "text": "Assalamualaikum jangan lupa olahraga....",
+        "author": "Dini Karuniasari",
+        "timestamp": "2025-09-03T16:09:47.086347"
+      },
+      {
+        "rank": 3,
+        "confidence": "0.30",
+        "text": "Bersama alumni 9H spensika angkatan 60....",
+        "author": "Lin Lin Andriani",
+        "timestamp": "2025-09-03T16:09:47.086822"
+      },
+      {
+        "rank": 4,
+        "confidence": "0.10",
+        "text": "Umasugi Gita and 4 others",
+        "author": "Umasugi Gita",
+        "timestamp": "2025-09-03T16:09:47.076680"
+      },
+      {
+        "rank": 5,
+        "confidence": "0.10",
+        "text": "Pramugari Muda ✅",
+        "author": "Pramugari Muda",
+        "timestamp": "2025-09-03T16:09:47.080998"
+      },
+      {
+        "rank": 6,
+        "confidence": "0.10",
+        "text": "Ai Nurhayati and 14 others",
+        "author": "Ai Nurhayati",
+        "timestamp": "2025-09-03T16:09:47.086087"
+      },
+      {
+        "rank": 7,
+        "confidence": "0.10",
+        "text": "Lin Lin Andriani and 15 oth",
+        "author": "Lin Lin Andriani",
+        "timestamp": "2025-09-03T16:09:47.090307"
+      },
+      {
+        "rank": 8,
+        "confidence": "0.10",
+        "text": "Wullan Ros and 66 others",
+        "author": "Wullan Ros",
+        "timestamp": "2025-09-03T16:09:47.090770"
+      },
+      {
+        "rank": 9,
+        "confidence": "0.10",
+        "text": "Anak moyang slamat ultah yg ke 1 tahun",
+        "author": "Nova",
+        "timestamp": "2025-09-03T16:09:47.095072"
+      },
+      {
+        "rank": 10,
+        "confidence": "0.10",
+        "text": "Nova and 2 others",
+        "author": "Nova",
+        "timestamp": "2025-09-03T16:09:47.098834"
+      }
+    ],
+    "qualityDistribution": {
+      "highConfidence": 0,
+      "mediumConfidence": 1,
+      "lowConfidence": 9
+    },
+    "authorStats": {
+      "totalAuthors": 7,
+      "postsWithAuthor": 10,
+      "postsWithoutAuthor": 0,
+      "authorCoverage": "100.0%",
+      "topAuthors": [
+        {
+          "author": "Umasugi Gita",
+          "postCount": 2
+        },
+        {
+          "author": "Lin Lin Andriani",
+          "postCount": 2
+        },
+        {
+          "author": "Nova",
+          "postCount": 2
+        },
+        {
+          "author": "Pramugari Muda",
+          "postCount": 1
+        },
+        {
+          "author": "Ai Nurhayati",
+          "postCount": 1
+        },
+        {
+          "author": "Dini Karuniasari",
+          "postCount": 1
+        },
+        {
+          "author": "Wullan Ros",
+          "postCount": 1
+        }
+      ]
+    }
+  },
+  "posts": [
+    {
+      "id": "clean_post_1",
+      "originalId": "container_post_0",
+      "text": "\"A million ideas mean nothing if they never bring them to life, start with one and let it flow.\" \"",
+      "author": "Umasugi Gita",
+      "timestamp": "2025-09-03T16:09:47.074039",
+      "confidence": 0.6,
+      "originalIndex": 0,
+      "status": "neutral",
+      "sentiment_score": 0.0,
+      "emotion": "neutral",
+      "key_topics": [],
+      "summary": "\"A million ideas mean nothing if they never bring them to life, start with one and let it flow.\" \""
+    },
+    {
+      "id": "clean_post_2",
+      "originalId": "container_post_95",
+      "text": "Umasugi Gita and 4 others",
+      "author": "Umasugi Gita",
+      "timestamp": "2025-09-03T16:09:47.076680",
+      "confidence": 0.1,
+      "originalIndex": 5,
+      "status": "neutral",
+      "sentiment_score": 0.0,
+      "emotion": "neutral",
+      "key_topics": [],
+      "summary": "Umasugi Gita and 4 others"
+    },
+    {
+      "id": "clean_post_3",
+      "originalId": "container_post_193",
+      "text": "Pramugari Muda ✅",
+      "author": "Pramugari Muda",
+      "timestamp": "2025-09-03T16:09:47.080998",
+      "confidence": 0.1,
+      "originalIndex": 53
+    },
+    {
+      "id": "clean_post_8",
+      "originalId": "container_post_309",
+      "text": "Ai Nurhayati and 14 others",
+      "author": "Ai Nurhayati",
+      "timestamp": "2025-09-03T16:09:47.086087",
+      "confidence": 0.1,
+      "originalIndex": 75,
+      "status": "neutral",
+      "sentiment_score": 0.0,
+      "emotion": "neutral",
+      "key_topics": [],
+      "summary": "Ai Nurhayati and 14 others"
+    },
+    {
+      "id": "clean_post_9",
+      "originalId": "container_post_334",
+      "text": "Assalamualaikum jangan lupa olahraga....",
+      "author": "Dini Karuniasari",
+      "timestamp": "2025-09-03T16:09:47.086347",
+      "confidence": 0.30000000000000004,
+      "originalIndex": 79,
+      "status": "neutral",
+      "sentiment_score": 0.0,
+      "emotion": "neutral",
+      "key_topics": [],
+      "summary": "Assalamualaikum jangan lupa olahraga...."
+    },
+    {
+      "id": "clean_post_10",
+      "originalId": "container_post_363",
+      "text": "Bersama alumni 9H spensika angkatan 60....",
+      "author": "Lin Lin Andriani",
+      "timestamp": "2025-09-03T16:09:47.086822",
+      "confidence": 0.30000000000000004,
+      "originalIndex": 86,
+      "status": "neutral",
+      "sentiment_score": 0.0,
+      "emotion": "neutral",
+      "key_topics": [],
+      "summary": "Bersama alumni 9H spensika angkatan 60...."
+    },
+    {
+      "id": "clean_post_11",
+      "originalId": "container_post_387",
+      "text": "Lin Lin Andriani and 15 oth",
+      "author": "Lin Lin Andriani",
+      "timestamp": "2025-09-03T16:09:47.090307",
+      "confidence": 0.1,
+      "originalIndex": 90,
+      "status": "neutral",
+      "sentiment_score": 0.0,
+      "emotion": "neutral",
+      "key_topics": [],
+      "summary": "Lin Lin Andriani and 15 oth"
+    },
+    {
+      "id": "clean_post_12",
+      "originalId": "container_post_397",
+      "text": "Wullan Ros and 66 others",
+      "author": "Wullan Ros",
+      "timestamp": "2025-09-03T16:09:47.090770",
+      "confidence": 0.1,
+      "originalIndex": 93,
+      "status": "neutral",
+      "sentiment_score": 0.0,
+      "emotion": "neutral",
+      "key_topics": [],
+      "summary": "Wullan Ros and 66 others"
+    },
+    {
+      "id": "clean_post_15",
+      "originalId": "container_post_446",
+      "text": "Anak moyang slamat ultah yg ke 1 tahun",
+      "author": "Nova",
+      "timestamp": "2025-09-03T16:09:47.095072",
+      "confidence": 0.1,
+      "originalIndex": 104,
+      "status": "neutral",
+      "sentiment_score": 0.0,
+      "emotion": "neutral",
+      "key_topics": [],
+      "summary": "Anak moyang slamat ultah yg ke 1 tahun"
+    },
+    {
+      "id": "clean_post_16",
+      "originalId": "container_post_466",
+      "text": "Nova and 2 others",
+      "author": "Nova",
+      "timestamp": "2025-09-03T16:09:47.098834",
+      "confidence": 0.1,
+      "originalIndex": 108
+    }
+  ]
+}

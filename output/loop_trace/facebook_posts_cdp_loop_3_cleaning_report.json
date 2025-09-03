@@ -1,0 +1,120 @@
+{
+  "summary": {
+    "cleanedPosts": 10,
+    "processingDate": "2025-09-03T16:04:06.851624",
+    "method": "CDP Session (Mobile) + Advanced Cleaning"
+  },
+  "topPosts": [
+    {
+      "rank": 1,
+      "confidence": "0.60",
+      "text": "“Hidup itu singkat, jadi nikmati setiap detik dengan hati yang penuh syukur.”😊",
+      "author": "Imelda Bani",
+      "timestamp": "2025-09-03T16:03:39.403088"
+    },
+    {
+      "rank": 2,
+      "confidence": "0.50",
+      "text": "Iren Zebua and 6.7K others",
+      "author": "Evfranda Hatoguan",
+      "timestamp": "2025-09-03T16:03:39.402766"
+    },
+    {
+      "rank": 3,
+      "confidence": "0.40",
+      "text": "Bukan sok ganteng yakan , sukak aja aku menggara garain abangku memang",
+      "author": "Evfranda Hatoguan",
+      "timestamp": "2025-09-03T16:03:39.399544"
+    },
+    {
+      "rank": 4,
+      "confidence": "0.40",
+      "text": "Untung aja itu cuma mimpi yaa Axy🙈 Saksikan sinetron",
+      "author": "PT Sinemart",
+      "timestamp": "2025-09-03T16:03:39.411114"
+    },
+    {
+      "rank": 5,
+      "confidence": "0.10",
+      "text": "Berburu jamur jarami",
+      "author": "Resti Holipah",
+      "timestamp": "2025-09-03T16:03:39.392671"
+    },
+    {
+      "rank": 6,
+      "confidence": "0.10",
+      "text": "Mau jadi Ninja 😅",
+      "author": "Dey RQ",
+      "timestamp": "2025-09-03T16:03:39.403635"
+    },
+    {
+      "rank": 7,
+      "confidence": "0.10",
+      "text": "Dey RQ and 26 others",
+      "author": "Dey RQ",
+      "timestamp": "2025-09-03T16:03:39.406804"
+    },
+    {
+      "rank": 8,
+      "confidence": "0.10",
+      "text": "sami teu di daerah baraya nujh seueur demo",
+      "author": "Ai Nurhayati",
+      "timestamp": "2025-09-03T16:03:39.407205"
+    },
+    {
+      "rank": 9,
+      "confidence": "0.10",
+      "text": "Ai Nurhayati and 8 others",
+      "author": "Ai Nurhayati",
+      "timestamp": "2025-09-03T16:03:39.410220"
+    },
+    {
+      "rank": 10,
+      "confidence": "0.10",
+      "text": "Umasugi Gita and 10 others",
+      "author": "Umasugi Gita",
+      "timestamp": "2025-09-03T16:03:39.414578"
+    }
+  ],
+  "qualityDistribution": {
+    "highConfidence": 0,
+    "mediumConfidence": 2,
+    "lowConfidence": 8
+  },
+  "authorStats": {
+    "totalAuthors": 7,
+    "postsWithAuthor": 10,
+    "postsWithoutAuthor": 0,
+    "authorCoverage": "100.0%",
+    "topAuthors": [
+      {
+        "author": "Evfranda Hatoguan",
+        "postCount": 2
+      },
+      {
+        "author": "Dey RQ",
+        "postCount": 2
+      },
+      {
+        "author": "Ai Nurhayati",
+        "postCount": 2
+      },
+      {
+        "author": "Resti Holipah",
+        "postCount": 1
+      },
+      {
+        "author": "Imelda Bani",
+        "postCount": 1
+      },
+      {
+        "author": "PT Sinemart",
+        "postCount": 1
+      },
+      {
+        "author": "Umasugi Gita",
+        "postCount": 1
+      }
+    ]
+  }
+}

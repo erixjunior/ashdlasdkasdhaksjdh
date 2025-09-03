@@ -1,0 +1,377 @@
+{
+  "scrapedAt": "2025-09-03T16:06:39.537925",
+  "totalPosts": 18,
+  "source": "https://m.facebook.com/me",
+  "method": "CDP Session (Mobile) + Advanced Cleaning",
+  "cleaningStats": {
+    "summary": {
+      "cleanedPosts": 18,
+      "processingDate": "2025-09-03T16:06:39.537750",
+      "method": "CDP Session (Mobile) + Advanced Cleaning"
+    },
+    "topPosts": [
+      {
+        "rank": 1,
+        "confidence": "0.80",
+        "text": "Sakiyeu oge udh Alhamdulillah Nama nya juga belajar 😆 Gak app ?di Bilang jelek kebanyak",
+        "author": "Ai Saadah",
+        "timestamp": "2025-09-03T16:06:09.752029"
+      },
+      {
+        "rank": 2,
+        "confidence": "0.80",
+        "text": "Mari hadapi hari ini dengan senyuman dan keyakinan. Selamat siang!🤗",
+        "author": "Wullan Ros",
+        "timestamp": "2025-09-03T16:06:09.766037"
+      },
+      {
+        "rank": 3,
+        "confidence": "0.60",
+        "text": "Tidak Tamat SMP Bantu Ayah Dengan jadi OJOL Sejak lama Affan Kurniawan bercita-cita ingin belikan Ru...",
+        "author": "Putri Aziz",
+        "timestamp": "2025-09-03T16:06:09.779749"
+      },
+      {
+        "rank": 4,
+        "confidence": "0.40",
+        "text": "Arbani Yasiz bersama Raissa Ramadhani menikmati honeymoon di Dubai 🖤",
+        "author": "Fansleslar",
+        "timestamp": "2025-09-03T16:06:09.761479"
+      },
+      {
+        "rank": 5,
+        "confidence": "0.40",
+        "text": "perubahan dulu sampai sekarang ko bisa keren banget😲😱",
+        "author": "Bang Ibnu",
+        "timestamp": "2025-09-03T16:06:09.779065"
+      },
+      {
+        "rank": 6,
+        "confidence": "0.10",
+        "text": "Mawul ada galau 🙈😁😂",
+        "author": "Wulan Muda",
+        "timestamp": "2025-09-03T16:06:09.755665"
+      },
+      {
+        "rank": 7,
+        "confidence": "0.10",
+        "text": "Selamat ipar syg, langgeng sllu dan bahagia sllu🥰🥰",
+        "author": "Charol",
+        "timestamp": "2025-09-03T16:06:09.756377"
+      },
+      {
+        "rank": 8,
+        "confidence": "0.10",
+        "text": "It's cold baby 😨",
+        "author": "Bowo Potabuga",
+        "timestamp": "2025-09-03T16:06:09.756866"
+      },
+      {
+        "rank": 9,
+        "confidence": "0.10",
+        "text": "Bowo Potabuga and 11 others",
+        "author": "Bowo Potabuga",
+        "timestamp": "2025-09-03T16:06:09.760517"
+      },
+      {
+        "rank": 10,
+        "confidence": "0.10",
+        "text": "KOCAK banget bikin KOCOK perut🤣",
+        "author": "Kadek Joged Bali",
+        "timestamp": "2025-09-03T16:06:09.760940"
+      }
+    ],
+    "qualityDistribution": {
+      "highConfidence": 0,
+      "mediumConfidence": 3,
+      "lowConfidence": 15
+    },
+    "authorStats": {
+      "totalAuthors": 14,
+      "postsWithAuthor": 18,
+      "postsWithoutAuthor": 0,
+      "authorCoverage": "100.0%",
+      "topAuthors": [
+        {
+          "author": "Bowo Potabuga",
+          "postCount": 2
+        },
+        {
+          "author": "Ai Nurhayati",
+          "postCount": 2
+        },
+        {
+          "author": "Luna Maya",
+          "postCount": 2
+        },
+        {
+          "author": "Putri Aziz",
+          "postCount": 2
+        },
+        {
+          "author": "Ai Saadah",
+          "postCount": 1
+        },
+        {
+          "author": "Wulan Muda",
+          "postCount": 1
+        },
+        {
+          "author": "Charol",
+          "postCount": 1
+        },
+        {
+          "author": "Kadek Joged Bali",
+          "postCount": 1
+        },
+        {
+          "author": "Fansleslar",
+          "postCount": 1
+        },
+        {
+          "author": "Wullan Ros",
+          "postCount": 1
+        }
+      ]
+    }
+  },
+  "posts": [
+    {
+      "id": "clean_post_1",
+      "originalId": "container_post_0",
+      "text": "Sakiyeu oge udh Alhamdulillah Nama nya juga belajar 😆 Gak app ?di Bilang jelek kebanyak",
+      "author": "Ai Saadah",
+      "timestamp": "2025-09-03T16:06:09.752029",
+      "confidence": 0.7999999999999999,
+      "originalIndex": 0,
+      "status": "neutral",
+      "sentiment_score": 0.0,
+      "emotion": "neutral",
+      "key_topics": [],
+      "summary": "Sakiyeu oge udh Alhamdulillah Nama nya juga belajar 😆 Gak app ?di Bilang jelek kebanyak"
+    },
+    {
+      "id": "clean_post_2",
+      "originalId": "container_post_201",
+      "text": "Mawul ada galau 🙈😁😂",
+      "author": "Wulan Muda",
+      "timestamp": "2025-09-03T16:06:09.755665",
+      "confidence": 0.1,
+      "originalIndex": 53
+    },
+    {
+      "id": "clean_post_4",
+      "originalId": "container_post_250",
+      "text": "Selamat ipar syg, langgeng sllu dan bahagia sllu🥰🥰",
+      "author": "Charol",
+      "timestamp": "2025-09-03T16:06:09.756377",
+      "confidence": 0.1,
+      "originalIndex": 61,
+      "status": "neutral",
+      "sentiment_score": 0.0,
+      "emotion": "neutral",
+      "key_topics": [],
+      "summary": "Selamat ipar syg, langgeng sllu dan bahagia sllu🥰🥰"
+    },
+    {
+      "id": "clean_post_5",
+      "originalId": "container_post_281",
+      "text": "It's cold baby 😨",
+      "author": "Bowo Potabuga",
+      "timestamp": "2025-09-03T16:06:09.756866",
+      "confidence": 0.1,
+      "originalIndex": 65
+    },
+    {
+      "id": "clean_post_6",
+      "originalId": "container_post_297",
+      "text": "Bowo Potabuga and 11 others",
+      "author": "Bowo Potabuga",
+      "timestamp": "2025-09-03T16:06:09.760517",
+      "confidence": 0.1,
+      "originalIndex": 69,
+      "status": "neutral",
+      "sentiment_score": 0.0,
+      "emotion": "neutral",
+      "key_topics": [],
+      "summary": "Bowo Potabuga and 11 others"
+    },
+    {
+      "id": "clean_post_7",
+      "originalId": "container_post_305",
+      "text": "KOCAK banget bikin KOCOK perut🤣",
+      "author": "Kadek Joged Bali",
+      "timestamp": "2025-09-03T16:06:09.760940",
+      "confidence": 0.1,
+      "originalIndex": 72,
+      "status": "neutral",
+      "sentiment_score": 0.0,
+      "emotion": "neutral",
+      "key_topics": [],
+      "summary": "KOCAK banget bikin KOCOK perut🤣"
+    },
+    {
+      "id": "clean_post_8",
+      "originalId": "container_post_332",
+      "text": "Arbani Yasiz bersama Raissa Ramadhani menikmati honeymoon di Dubai 🖤",
+      "author": "Fansleslar",
+      "timestamp": "2025-09-03T16:06:09.761479",
+      "confidence": 0.4,
+      "originalIndex": 76,
+      "status": "neutral",
+      "sentiment_score": 0.0,
+      "emotion": "neutral",
+      "key_topics": [],
+      "summary": "Arbani Yasiz bersama Raissa Ramadhani menikmati honeymoon di Dubai 🖤"
+    },
+    {
+      "id": "clean_post_9",
+      "originalId": "container_post_363",
+      "text": "hayuu taruang baraya",
+      "author": "Ai Nurhayati",
+      "timestamp": "2025-09-03T16:06:09.761992",
+      "confidence": 0.1,
+      "originalIndex": 80
+    },
+    {
+      "id": "clean_post_10",
+      "originalId": "container_post_379",
+      "text": "Ai Nurhayati and 24 others",
+      "author": "Ai Nurhayati",
+      "timestamp": "2025-09-03T16:06:09.765531",
+      "confidence": 0.1,
+      "originalIndex": 84,
+      "status": "neutral",
+      "sentiment_score": 0.0,
+      "emotion": "neutral",
+      "key_topics": [],
+      "summary": "Ai Nurhayati and 24 others"
+    },
+    {
+      "id": "clean_post_11",
+      "originalId": "container_post_389",
+      "text": "Mari hadapi hari ini dengan senyuman dan keyakinan. Selamat siang!🤗",
+      "author": "Wullan Ros",
+      "timestamp": "2025-09-03T16:06:09.766037",
+      "confidence": 0.7999999999999999,
+      "originalIndex": 87,
+      "status": "neutral",
+      "sentiment_score": 0.0,
+      "emotion": "neutral",
+      "key_topics": [],
+      "summary": "Mari hadapi hari ini dengan senyuman dan keyakinan. Selamat siang!🤗"
+    },
+    {
+      "id": "clean_post_13",
+      "originalId": "container_post_499",
+      "text": "Lost in Italy, but found happiness 🇮🇹☀️",
+      "author": "Luna Maya",
+      "timestamp": "2025-09-03T16:06:09.774213",
+      "confidence": 0.1,
+      "originalIndex": 139,
+      "status": "neutral",
+      "sentiment_score": 0.0,
+      "emotion": "neutral",
+      "key_topics": [],
+      "summary": "Lost in Italy, but found happiness 🇮🇹☀️"
+    },
+    {
+      "id": "clean_post_14",
+      "originalId": "container_post_516",
+      "text": "Shumardia and 53K others",
+      "author": "Luna Maya",
+      "timestamp": "2025-09-03T16:06:09.778050",
+      "confidence": 0.1,
+      "originalIndex": 143,
+      "status": "neutral",
+      "sentiment_score": 0.0,
+      "emotion": "neutral",
+      "key_topics": [],
+      "summary": "Shumardia and 53K others"
+    },
+    {
+      "id": "clean_post_15",
+      "originalId": "container_post_526",
+      "text": "Aku sepi sepi sepi sepi bila tak ada kamu💔🥲",
+      "author": "Rakha Mala",
+      "timestamp": "2025-09-03T16:06:09.778366",
+      "confidence": 0.1,
+      "originalIndex": 146,
+      "status": "neutral",
+      "sentiment_score": 0.0,
+      "emotion": "neutral",
+      "key_topics": [],
+      "summary": "Aku sepi sepi sepi sepi bila tak ada kamu💔🥲"
+    },
+    {
+      "id": "clean_post_16",
+      "originalId": "container_post_580",
+      "text": "perubahan dulu sampai sekarang ko bisa keren banget😲😱",
+      "author": "Bang Ibnu",
+      "timestamp": "2025-09-03T16:06:09.779065",
+      "confidence": 0.4,
+      "originalIndex": 154,
+      "status": "neutral",
+      "sentiment_score": 0.0,
+      "emotion": "neutral",
+      "key_topics": [],
+      "summary": "perubahan dulu sampai sekarang ko bisa keren banget😲😱"
+    },
+    {
+      "id": "clean_post_17",
+      "originalId": "container_post_604",
+      "text": "Tidak Tamat SMP Bantu Ayah Dengan jadi OJOL Sejak lama Affan Kurniawan bercita-cita ingin belikan Rumah Untuk Orang",
+      "author": "Putri Aziz",
+      "timestamp": "2025-09-03T16:06:09.779749",
+      "confidence": 0.6,
+      "originalIndex": 158,
+      "status": "neutral",
+      "sentiment_score": 0.0,
+      "emotion": "neutral",
+      "key_topics": [],
+      "summary": "Tidak Tamat SMP Bantu Ayah Dengan jadi OJOL Sejak lama Affan Kurniawan bercita-cita ingin belikan Ru..."
+    },
+    {
+      "id": "clean_post_18",
+      "originalId": "container_post_620",
+      "text": "Iren Zebua and 130K ot",
+      "author": "Putri Aziz",
+      "timestamp": "2025-09-03T16:06:09.783366",
+      "confidence": 0.1,
+      "originalIndex": 162,
+      "status": "neutral",
+      "sentiment_score": 0.0,
+      "emotion": "neutral",
+      "key_topics": [],
+      "summary": "Iren Zebua and 130K ot"
+    },
+    {
+      "id": "clean_post_19",
+      "originalId": "container_post_630",
+      "text": "Hotel terbaik di Dunia🥰 berada Di Pulau Sumba",
+      "author": "Julia Airon",
+      "timestamp": "2025-09-03T16:06:09.783834",
+      "confidence": 0.1,
+      "originalIndex": 165,
+      "status": "neutral",
+      "sentiment_score": 0.0,
+      "emotion": "neutral",
+      "key_topics": [],
+      "summary": "Hotel terbaik di Dunia🥰 berada Di Pulau Sumba"
+    },
+    {
+      "id": "clean_post_20",
+      "originalId": "container_post_657",
+      "text": "RESEP BOBA Bahan-bahan:",
+      "author": "Orinhana",
+      "timestamp": "2025-09-03T16:06:09.784418",
+      "confidence": 0.1,
+      "originalIndex": 169,
+      "status": "neutral",
+      "sentiment_score": 0.0,
+      "emotion": "neutral",
+      "key_topics": [],
+      "summary": "RESEP BOBA Bahan-bahan:"
+    }
+  ]
+}
